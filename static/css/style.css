@@ -9,6 +9,17 @@ body {
     background-color: rgb(238, 233, 233);
 }
 
+html,body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex:1;
+}
+
 .container {
     display: flex;
     align-items: center;
@@ -22,6 +33,14 @@ body {
     display: flex;
     align-items: center;
     padding-left: 15px;
+}
+
+.logo-container a{
+    text-decoration: none;
+}
+
+.logo-container a:active{
+    color: #551a8b;
 }
 
 .nav-options {
@@ -165,8 +184,17 @@ body {
     margin: 2px;
 }
 
+.task-center-card p{
+    overflow-wrap: break-word;
+    min-width: 0;
+    flex: 1;
+    max-width: 100%;
+    word-break: break-all;
+}
+
 .task-icon-container{
     padding: 1px 15px;
+    flex-shrink: 0;
 }
 
 .task-icon{
@@ -231,4 +259,40 @@ body {
     padding: 20px;
 }
 
+footer{
+    background-color: #030405;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
 
+
+#edit-heading{
+    text-align: center;
+    padding: 15px;
+}
+
+.edit-form{
+    text-align: center;
+}
+
+.back-button{
+    text-align: center;
+    padding: 15px;
+    margin: 20px 15px;
+}
+
+.back-button a{
+    text-decoration: none;
+    background-color: rgb(231, 0, 0);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.back-button a:hover{
+    background-color: rgb(255, 39, 39);
+}

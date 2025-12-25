@@ -1,33 +1,9 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskManager</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </head>
+{% block content %}
 
-  <body>
-    <header>
-      <nav class="container">
-        <div class="logo-container">
-          <img src="{% static 'images/logo.png' %}" alt="logo" />
-          <h3>TaskMaster</h3>
-        </div>
-
-        <div class="nav-options">
-          <a href="#">Dashboard</a>
-          <a href="#">About</a>
-          <a href="#">Theme</a>
-        </div>
-      </nav>
-    </header>
-
-    <h3 id="info-heading">Overview</h3>
-    <section class="info-container">
+<h3 id="info-heading">Overview</h3>
+<section class="info-container">
       <div class="top-card">
         Total Tasks <span class="task-count">{{ total_tasks }}</span>
       </div>
@@ -50,7 +26,7 @@
             <div class="task-icon-container">
               <a href="{% url 'mark_as_done' task.pk %}" class="task-icon done"><img src="{% static 'images/done.svg' %}" alt="done icon"></a>
               <a href="{% url 'edit_task' task.id %}" class="task-icon edit"><img src="{% static 'images/edit.svg' %}" alt="edit icon"></a>
-              <a href="{% url 'delete_task' task.pk %}" class="task-icon delete"><img src="{% static 'images/delete.svg' %}" alt="delete icon"></i></a>
+              <a href="{% url 'delete_task' task.pk %}" class="task-icon delete"><img src="{% static 'images/delete.svg' %}" alt="delete icon"></a>
             </div>
           </div>
         {% endfor %}
@@ -114,5 +90,5 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-  </body>
-</html>
+{% endblock  %}
+

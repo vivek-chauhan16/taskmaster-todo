@@ -1,40 +1,36 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/task_style.css' %}" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <title>TaskMaster- Update Tasks</title>
-  </head>
-  <body>
-    <h1>TaskMaster - Edit Task</h1>
 
-    <div class="form-container">
-      <form action="{% url 'edit_task' get_task.pk %}" method="POST">
-        {% csrf_token %}
-        <div class="form-group">
-          <input type="text" name="task" class="form-control" placeholder="Add a task" value="{{ get_task.task }}" />
-          <button type="submit">+ Update</button>
-        </div>
-      </form>
-    </div>
-    
-{% comment %} escapejs is a builtin filter in django which makes text safe for js preventing errors. {% endcomment %}
-    {% if messages %}
-      {% for message in messages %}
-        {% if message.tags == 'error' %}
-          <script>
-            Swal.fire({
-              title: 'Oops!',
-              text: 'Task cannot be empty',
-              icon: 'error',
-              confirmButtonText: 'OK'
-            })
-          </script>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-  </body>
-</html>
+{% block content %}
+  <h1 id="edit-heading">Update Task</h1>
+
+  <div class="form-container">
+    <form action="{% url 'edit_task' get_task.pk %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group edit-form">
+        <input type="text" name="task" class="form-control" placeholder="Add a task" value="{{ get_task.task }}" />
+        <button type="submit">+ Update</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="back-button">
+    <a href=" {% url 'home' %} " ><span>&#x21B6; Back to home</span></a>
+  </div>
+
+  {% comment %}escapejs is a builtin filter in django which makes text safe for js preventing errors.{% endcomment %}
+  {% if messages %}
+    {% for message in messages %}
+      {% if message.tags == 'error' %}
+        <script>
+          Swal.fire({
+            title: 'Oops!',
+            text: 'Task cannot be empty',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          })
+        </script>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endblock %}

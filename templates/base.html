@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskManager - Keep it done</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo-container">
+          <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo" /></a>
+          <a href="{% url 'home' %}"><h3>TaskMaster</h3></a>
+        </div>
+
+        <div class="nav-options">
+          <a href="#">About</a>
+          <a href="#">Theme</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="content">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    <footer>
+      <p>&copy; 2025 TaskMaster. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
