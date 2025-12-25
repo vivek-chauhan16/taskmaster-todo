@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskManager</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="container">
+        <div class="logo-container">
+          <img src="{% static 'images/logo.png' %}" alt="logo" />
+          <h3>TaskMaster</h3>
+        </div>
+
+        <div class="nav-options">
+          <a href="#">Dashboard</a>
+          <a href="#">About</a>
+          <a href="#">Theme</a>
+        </div>
+      </nav>
+    </header>
+
+    <h3 id="info-heading">Overview</h3>
+    <section class="info-container">
+      <div class="top-card">
+        Total Tasks <span class="task-count">{{ total_tasks }}</span>
+      </div>
+      <div class="top-card">
+        Pending Tasks <span class="task-count">{{ total_pending_tasks }}</span>
+      </div>
+      <div class="top-card">
+        Completed Tasks <span class="task-count">{{ total_completed_tasks }}</span>
+      </div>
+    </section>
+
+    <section class="task-container">
+      <div class="task-card">
+        <div class="top">
+          <h3>Incomplete Tasks</h3>
+        </div>
+        {% for task in tasks %}
+          <div class="incomplete-tasks task-center-card">
+            <p>{{ task.task }}</p>
+            <div class="task-icon-container">
+              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-pencil-edit-02"></i></a>
+              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-delete-02"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="form-container">
+          <form action="{% url "addTask" %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <input type="text" name="task" class="form-control" placeholder="Add new task" />
+              <button type="submit">+ Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="task-card">
+        <div class="top">
+          <h3>Completed Tasks</h3>
+        </div>
+        {% for task in completed_tasks %}
+          <div class="completed-tasks task-center-card">
+            <p>{{ task.task|title }}</p>
+            <div class="task-icon-container">
+              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-pencil-edit-02"></i></a>
+              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-delete-02"></i></a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </body>
+</html>
