@@ -7,6 +7,7 @@
     <title>TaskManager</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
@@ -47,14 +48,20 @@
           <div class="incomplete-tasks task-center-card">
             <p>{{ task.task }}</p>
             <div class="task-icon-container">
-              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-pencil-edit-02"></i></a>
-              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-delete-02"></i></a>
+              <a href="{% url 'mark_as_done' task.pk %}" class="task-icon done"><img src="{% static 'images/done.svg' %}" alt="done icon"></a>
+              <a href="{% url 'edit_task' task.id %}" class="task-icon edit"><img src="{% static 'images/edit.svg' %}" alt="edit icon"></a>
+              <a href="{% url 'delete_task' task.pk %}" class="task-icon delete"><img src="{% static 'images/delete.svg' %}" alt="delete icon"></i></a>
             </div>
           </div>
         {% endfor %}
+        {% if total_pending_tasks == 0 %}
+          <div class="status-card">
+            <p>No task alloted</p>
+          </div>
+        {% endif %}
 
         <div class="form-container">
-          <form action="{% url "addTask" %}" method="post">
+          <form action="{% url 'addTask' %}" method="post">
             {% csrf_token %}
             <div class="form-group">
               <input type="text" name="task" class="form-control" placeholder="Add new task" />
@@ -72,12 +79,40 @@
           <div class="completed-tasks task-center-card">
             <p>{{ task.task|title }}</p>
             <div class="task-icon-container">
-              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-pencil-edit-02"></i></a>
-              <a href="#" class="task-icon"><i class="hgi hgi-stroke hgi-delete-02"></i></a>
+              <a href=" {% url 'mark_as_undone' task.pk %} " class="task-icon undone"><img src="{% static 'images/undone.svg' %}" alt="undone icon"></a>
+              <a href="{% url 'delete_task' task.pk %}" class="task-icon delete"><img src="{% static 'images/delete.svg' %}" alt="delete icon"></a>
             </div>
           </div>
         {% endfor %}
+        {% if total_completed_tasks == 0 %}
+          <div class="status-card">
+            <p>No task completed</p>
+          </div>
+        {% endif %}
       </div>
     </section>
+
+    {% comment %}escapejs is a builtin filter in django which makes text safe for js preventing errors.{% endcomment %}
+    {% if messages %}
+      {% for message in messages %}
+        {% if 'add_error' in message.tags %}
+          <script>
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops!',
+              text: '{{message|escapejs}}'
+            })
+          </script>
+        {% elif 'update_success' in message.tags %}
+          <script>
+            Swal.fire({
+              icon: 'success',
+              title: 'Task Updated',
+              text: '{{ message|escapejs }}'
+            })
+          </script>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </body>
 </html>

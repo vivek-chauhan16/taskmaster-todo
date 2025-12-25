@@ -125,19 +125,34 @@ body {
     padding: 10px 15px;
     width: 80%;
     font-size: 15px;
+    border-radius: 10px;
+    border:1px solid blue;
+    transition: all 0.2s ease;
 }
+
+.form-group input:hover{
+    border: 1px solid rgb(20, 126, 6);
+}
+
+.form-group input:focus{
+    border: 2px solid rgb(30, 95, 192);
+    outline: none;
+}
+
 .form-group button{
-    padding: 7px 15px;
+    padding: 11px 17px;
     font-size: 18px;
-    background-color: rgb(2, 143, 13);
+    background-color: #0f286dd7;
+    border:none;
     color: white;
     border-radius: 6px;
     font-weight: 600;
     margin-left: 13px;
+    transition: all 0.25s ease;
 }
 
 .form-group button:hover{
-    background-color: rgb(51, 173, 14);
+    background-color: #3a5bb6d7;
     cursor: pointer;
 }
 
@@ -146,15 +161,60 @@ body {
     padding: 14px;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0px 1px 8px rgb(202, 183, 183);
+    margin: 2px;
 }
 
 .task-icon-container{
-    padding: 0 15px;
+    padding: 1px 15px;
 }
 
-.task-icon-container a{
-    padding: 0 5px;
+.task-icon{
+    border-radius: 6px;
+    padding: 15px 10px 8px 10px;
 }
+
+.task-icon img{
+    height: auto;
+    object-fit: contain;
+}
+
+.task-icon.done{
+    background-color: rgb(2, 139, 2);
+    transition: all 0.25s ease;
+}
+
+.task-icon.done:hover{
+    background-color: rgb(17, 172, 17);
+}
+
+.task-icon.edit{
+    background-color: #009688;   
+    transition: all 0.25s ease;
+}
+
+.task-icon.edit:hover{
+    background-color: #31cabb;   
+}
+
+.task-icon.delete{
+    background-color: rgb(209, 6, 6);
+    transition: all 0.25s ease;
+}
+
+.task-icon.delete:hover{
+    background-color: rgb(238, 42, 42);
+}
+
+.task-icon.undone{
+    background-color: rgb(190, 103, 4);
+    transition: all 0.25s ease;
+}
+
+.task-icon.undone:hover{
+    background-color: rgb(231, 139, 34);
+}
+
 
 .completed-status {
     display: flex;
@@ -165,7 +225,10 @@ body {
 .completed-status span {
     padding: 10px;
 } 
-
-
+.status-card{
+    font-weight: bold;
+    opacity: 0.5;
+    padding: 20px;
+}
 
 
