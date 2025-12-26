@@ -14,5 +14,7 @@ urlpatterns = [
 
      path('about/',views.about, name='about'),
 
+     path('social/',views.social, name='social'),
+
   
 ]

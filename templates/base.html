@@ -7,7 +7,7 @@
     <meta name="apple-mobile-web-app-title" content="TaskMaster" />
     {% comment %}set the color of top status bar in android{% endcomment %}
     <meta name="theme-color" content="#ffffff" />
-    <title>TaskManager - Keep it done</title>
+    <title>{% block title %}TaskManager - Keep it done{% endblock  %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -28,8 +28,10 @@
 
         <div class="nav-options">
           <a href=" {% url 'about' %} ">About</a>
-          <a href="#">Theme</a>
+          <a href="{% url 'social' %}">Social</a>
         </div>
+
+        <button class="hamburger" aria-label="Toggle-menu">☰</button>
       </nav>
     </header>
 
@@ -42,5 +44,8 @@
     <footer>
       <p>&copy; 2025 TaskMaster. All Rights Reserved.</p>
     </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
   </body>
 </html>

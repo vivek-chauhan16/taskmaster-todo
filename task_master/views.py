@@ -49,3 +49,6 @@ def edit_task(request,pk):
 
 def about(request):
     return render(request, 'about.html')
+
+def social(request):
+    return render(request, 'social.html')

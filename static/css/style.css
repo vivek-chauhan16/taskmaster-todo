@@ -44,6 +44,10 @@ body {
     color: #551a8b;
 }
 
+.logo-container a:hover {
+    color: #6c3e97;
+}
+
 .nav-options {
     margin-right: 45px;
 }
@@ -51,14 +55,17 @@ body {
 .nav-options a {
     text-decoration: none;
     padding: 20px;
+    color: #031874;
+    font-size: large;
     transition: 0.2s ease all;
 }
 
 .nav-options a:hover {
-    background-color: rgb(224, 221, 221);
+    background-color: rgb(105, 107, 109);
+    color: white;
     padding: 20px;
     border-radius: 5px;
-    text-shadow: 0px 0px 10px rgb(148, 152, 187);
+    text-shadow: 1px 1px 10px rgb(136, 136, 141);
 }
 
 #info-heading {
@@ -367,6 +374,60 @@ footer {
     box-shadow: 0 0 10px rgb(22, 32, 46);
 }
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.social-heading {
+    margin-bottom: 15px;
+    color: #09164d;
+    text-shadow: 2px 2px 5px rgb(143, 132, 132);
+}
+
+.social-container {
+    border-radius: 5px;
+    width: 50%;
+    margin: 35px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #d9dbdb;
+    box-shadow: 0 0 20px rgb(145, 141, 141);
+}
+
+.social-card img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.social-card h3 {
+    padding: 10px;
+}
+
+.social-card a {
+    color: rgb(4, 4, 68);
+    font-weight: bold;
+    padding: 10px;
+    transition: all 0.2s ease;
+}
+
+.social-card a:hover {
+    border-radius: 6px;
+    color: white;
+    background-color: rgb(49, 49, 148);
+    padding: 10px;
+}
+
+.social-card p {
+    padding-bottom: 20px;
+}
+
+
 @media (max-width: 1106px) {
     .form-group {
         display: flex;
@@ -379,13 +440,37 @@ footer {
         width: 80%;
     }
 
+    .social-container {
+        width: 80%;
+    }
 }
 
 @media (max-width: 800px) {
     .task-container {
         grid-template-columns: 1fr;
     }
+
+    .nav-options {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
 }
+
+.nav-options.show {
+    display: flex;
+    flex-direction: column;
+    background: rgb(231, 229, 229);
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    opacity: 0.95;
+}
+
 
 @media (max-width:550px) {
     .info-container {
