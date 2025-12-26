@@ -9,15 +9,16 @@ body {
     background-color: rgb(238, 233, 233);
 }
 
-html,body{
+html,
+body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-.content{
-    flex:1;
+.content {
+    flex: 1;
 }
 
 .container {
@@ -35,11 +36,11 @@ html,body{
     padding-left: 15px;
 }
 
-.logo-container a{
+.logo-container a {
     text-decoration: none;
 }
 
-.logo-container a:active{
+.logo-container a:active {
     color: #551a8b;
 }
 
@@ -53,7 +54,7 @@ html,body{
     transition: 0.2s ease all;
 }
 
-.nav-options a:hover{
+.nav-options a:hover {
     background-color: rgb(224, 221, 221);
     padding: 20px;
     border-radius: 5px;
@@ -62,6 +63,9 @@ html,body{
 
 #info-heading {
     padding: 10px 20px;
+    text-align: center;
+    color: #08112e;
+    margin-top: 10px;
 }
 
 .info-container {
@@ -81,11 +85,11 @@ html,body{
     font-weight: 600;
     display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
 }
 
-.top-card span{
+.top-card span {
     font-size: 2.5rem;
     font-weight: bold;
     padding: 0;
@@ -131,38 +135,38 @@ html,body{
     font-weight: 500;
 }
 
-.task-icon{
+.task-icon {
     text-decoration: none;
 
 }
 
-.form-group{
+.form-group {
     padding: 15px 10px;
-}   
+}
 
-.form-group input{
+.form-group input {
     padding: 10px 15px;
     width: 80%;
     font-size: 15px;
     border-radius: 10px;
-    border:1px solid blue;
+    border: 1px solid blue;
     transition: all 0.2s ease;
 }
 
-.form-group input:hover{
+.form-group input:hover {
     border: 1px solid rgb(20, 126, 6);
 }
 
-.form-group input:focus{
+.form-group input:focus {
     border: 2px solid rgb(30, 95, 192);
     outline: none;
 }
 
-.form-group button{
+.form-group button {
     padding: 11px 17px;
     font-size: 18px;
     background-color: #0f286dd7;
-    border:none;
+    border: none;
     color: white;
     border-radius: 6px;
     font-weight: 600;
@@ -170,12 +174,12 @@ html,body{
     transition: all 0.25s ease;
 }
 
-.form-group button:hover{
+.form-group button:hover {
     background-color: #3a5bb6d7;
     cursor: pointer;
 }
 
-.task-center-card{
+.task-center-card {
     display: flex;
     padding: 14px;
     align-items: center;
@@ -184,7 +188,7 @@ html,body{
     margin: 2px;
 }
 
-.task-center-card p{
+.task-center-card p {
     overflow-wrap: break-word;
     min-width: 0;
     flex: 1;
@@ -192,54 +196,54 @@ html,body{
     word-break: break-all;
 }
 
-.task-icon-container{
+.task-icon-container {
     padding: 1px 15px;
     flex-shrink: 0;
 }
 
-.task-icon{
+.task-icon {
     border-radius: 6px;
     padding: 15px 10px 8px 10px;
 }
 
-.task-icon img{
+.task-icon img {
     height: auto;
     object-fit: contain;
 }
 
-.task-icon.done{
+.task-icon.done {
     background-color: rgb(2, 139, 2);
     transition: all 0.25s ease;
 }
 
-.task-icon.done:hover{
+.task-icon.done:hover {
     background-color: rgb(17, 172, 17);
 }
 
-.task-icon.edit{
-    background-color: #009688;   
+.task-icon.edit {
+    background-color: #009688;
     transition: all 0.25s ease;
 }
 
-.task-icon.edit:hover{
-    background-color: #31cabb;   
+.task-icon.edit:hover {
+    background-color: #31cabb;
 }
 
-.task-icon.delete{
+.task-icon.delete {
     background-color: rgb(209, 6, 6);
     transition: all 0.25s ease;
 }
 
-.task-icon.delete:hover{
+.task-icon.delete:hover {
     background-color: rgb(238, 42, 42);
 }
 
-.task-icon.undone{
+.task-icon.undone {
     background-color: rgb(190, 103, 4);
     transition: all 0.25s ease;
 }
 
-.task-icon.undone:hover{
+.task-icon.undone:hover {
     background-color: rgb(231, 139, 34);
 }
 
@@ -252,38 +256,42 @@ html,body{
 
 .completed-status span {
     padding: 10px;
-} 
-.status-card{
+}
+
+.status-card {
     font-weight: bold;
     opacity: 0.5;
     padding: 20px;
 }
 
-footer{
+footer {
     background-color: #030405;
     color: white;
     text-align: center;
     padding: 10px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 
-#edit-heading{
+#edit-heading {
     text-align: center;
     padding: 15px;
+    color: #031874;
+    text-shadow: 3px 2px 4px rgb(155, 186, 190);
 }
 
-.edit-form{
+.edit-form {
     text-align: center;
 }
 
-.back-button{
+.back-button {
     text-align: center;
     padding: 15px;
     margin: 20px 15px;
 }
 
-.back-button a{
+.back-button a {
     text-decoration: none;
     background-color: rgb(231, 0, 0);
     color: white;
@@ -293,6 +301,114 @@ footer{
     transition: all 0.2s ease;
 }
 
-.back-button a:hover{
+.back-button a:hover {
     background-color: rgb(255, 39, 39);
+}
+
+.about {
+    width: 50%;
+    margin: 35px auto;
+    padding: 15px;
+    background-color: rgb(219, 215, 215);
+    border-radius: 8px;
+    box-shadow: 0 0 13px rgb(138, 118, 118);
+}
+
+.about-content h2 {
+    text-align: center;
+    background-color: rgb(0, 0, 78);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.content-para {
+    margin-top: 14px;
+    padding: 10px;
+    background-color: #5e3070;
+    border-radius: 5px;
+    color: white;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    justify-content: space-around;
+}
+
+
+.photo {
+    border-radius: 15px;
+    margin: 15px;
+    width: 120px;
+    height: 130px;
+    box-shadow: 0 0 15px rgb(53, 50, 50);
+    background: linear-gradient(135deg, #dbdee2, #bbbdc2);
+    overflow: hidden;
+}
+
+.photo::before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(/static/images/me.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.creator-name {
+    background-color: rgb(40, 21, 56);
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 0 10px rgb(22, 32, 46);
+}
+
+@media (max-width: 1106px) {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .about {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .task-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:550px) {
+    .info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .task-center-card {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .task-icon-container {
+        padding: 10px;
+    }
+
+    .about {
+        width: 90%;
+    }
+}
+
+
+@media (max-width:880px) {
+    .creator {
+        flex-direction: column;
+    }
 }

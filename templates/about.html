@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="about">
+    <div class="about-content">
+      <h2>TaskMaster - keep it done</h2>
+
+      <p class="content-para">TaskMaster is a task management web application built with Django to manage daily tasks efficiently. Users can add new tasks, edit existing ones, mark tasks as completed, and delete tasks when no longer needed.</p>
+
+      <p class="content-para">The dashboard displays task statistics such as total tasks, pending tasks, and completed tasks, providing a clear overview of work progress.</p>
+
+      <p class="content-para">This project is created with a focus on clean design, practical functionality, and real-world usage.</p>
+
+      <div class="creator">
+        <div class="creator-name">
+          <span>Created by : <strong>VIVEK CHAUHAN</strong></span>
+        </div>
+        <div class="photo"></div>
+      </div>
+    </div>
+  </section>
+  <div class="back-button">
+    <a href=" {% url 'home' %} "><span>&#x21B6; Back to home</span></a>
+  </div>
+{% endblock %}

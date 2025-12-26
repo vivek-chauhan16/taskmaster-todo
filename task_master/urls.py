@@ -12,5 +12,7 @@ urlpatterns = [
 
      path('edit_task/<int:pk>/', views.edit_task, name="edit_task"),
 
+     path('about/',views.about, name='about'),
+
   
 ]

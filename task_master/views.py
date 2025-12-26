@@ -46,4 +46,6 @@ def edit_task(request,pk):
             'get_task': get_task,
         }
         return render(request, 'edit_task.html', context)
-    
+
+def about(request):
+    return render(request, 'about.html')
