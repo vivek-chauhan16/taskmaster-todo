@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.views.decorators.http import require_POST
 from .models import Task
 
 # Create your views here.
+@require_POST
 def addTask(request):
     task = request.POST.get('task','').strip()
     if task == "":
